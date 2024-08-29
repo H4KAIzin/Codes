@@ -1,0 +1,29 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Codes.CadastroForn">
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Label Text="Nome:" Grid.Row="0" />
+        <Entry Grid.Row="0" Placeholder="Digite seu nome" />
+
+        <Label Text="Tipo de usuário:" Grid.Row="1" />
+        <Entry Grid.Row="1" Placeholder="Digite seu tipo de usuário" />
+
+        <Label Text="Senha:" Grid.Row="2" />
+        <Entry Grid.Row="2" IsPassword="True" Placeholder="Digite sua senha" />
+
+        <Label Text="Confirmar senha:" Grid.Row="3" />
+        <Entry Grid.Row="3" IsPassword="True" Placeholder="Confirme sua senha" />
+
+        <Button Text="Voltar" Grid.Row="4" />
+        <Button Text="Entrar" Grid.Row="4" HorizontalOptions="End" />
+    </Grid>
+</ContentPage>
