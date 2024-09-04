@@ -1,25 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Codes.CadastroCliente">
+             x:Class="Codes.CadastroCliente"
+             BackgroundColor="#556677"
+             Title="Cadastro">
 
-    <Grid Padding="20">
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-        </Grid.RowDefinitions>
+    <ContentPage.Content>
 
-        <Label Text="Inserir Nome:" Grid.Row="0" />
-        <Entry Grid.Row="0" Placeholder="Digite seu nome" />
+        <ScrollView>
+        
+            <VerticalStackLayout Padding="30"
+                                 Spacing="30">
+                
 
-        <Label Text="Insira sua senha:" Grid.Row="1" />
-        <Entry Grid.Row="1" IsPassword="True" Placeholder="Digite sua senha" />
+                <Label Text="Tela pra Clientes"
+                    BackgroundColor="Blue"
+                    TextColor="Black"/>
 
-        <Label Text="Confirme a senha:" Grid.Row="2" />
-        <Entry Grid.Row="2" IsPassword="True" Placeholder="Confirme sua senha" />
+                <Label Text="Id:"/>
+                
+            <Label x:Name="IdLabel"/>
 
-        <Button Text="Salvar usuário" Grid.Row="3" />
-        <Button Text="Entrar" Grid.Row="3" HorizontalOptions="End" />
-    </Grid>
+                <Label Text="Nome:"/>
+                
+                <Entry x:Name="EntryName" 
+                       Placeholder="Nome" 
+                       BackgroundColor="White" 
+                       TextColor="Black" />
+
+                <Label Text="Email:"/>
+
+                <Entry x:Name="EntryEmail" 
+                       Placeholder="E-mail" 
+                       Keyboard="Email" 
+                       BackgroundColor="White" 
+                       TextColor="Black" />
+
+                <Label Text="Endereço:"/>
+
+                <Entry x:Name="EntryEndereco" 
+                       Placeholder="Endereço" 
+                       BackgroundColor="White" 
+                       TextColor="Black" />
+
+                <Label Text="Senha:"/>
+
+                <Entry x:Name="EntrySenha" 
+                       Placeholder="Senha" 
+                       IsPassword="True" 
+                       BackgroundColor="White" 
+                       TextColor="Black" />
+
+                <Label Text="Confirmar Senha:"/>
+
+                <Entry x:Name="ConfirmarEntrySenha" 
+                       Placeholder="Confirmar Senha" 
+                       IsPassword="True" 
+                       BackgroundColor="White" 
+                       TextColor="Black" />
+
+                <Button Text="Cadastrar" 
+                        BackgroundColor="#555555" 
+                        TextColor="White" 
+                        Clicked="OnSalvarDadosClicked" />
+
+                <Button Text="Apagar Dados" 
+                        BackgroundColor="DarkRed" 
+                        TextColor="White" 
+                        Clicked="OnApagarDadosClicked" />
+
+                <Button Text="Voltar" 
+                        BackgroundColor="Black" 
+                        TextColor="White" 
+                        Clicked="VoltarClicked" />
+
+            </VerticalStackLayout>
+
+        </ScrollView>
+
+    </ContentPage.Content>
 </ContentPage>

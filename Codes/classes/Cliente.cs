@@ -1,55 +1,14 @@
+using LiteDB;
 
+namespace Codes.Modelos;
 
-namespace Codes;
-
-public class Cliente{
-    Int64 Id;
-    String Nome;
-    String Email;
-    String Senha;
-    public Cliente()
-    {
-        
-    }
-
-    private void SetId(Int64 i)
-    {
-        Id = i;
-    }
-
-    public Int64 GetId()
-    {
-        return Id;
-    }
-
-    private void SetNome(String n)
-    {
-        Nome = n;
-    }
-
-    public string GetNome()
-    {
-        return Nome;
-    }
-
-    private void SetEmail(String e)
-    {
-        Email = e;
-    }
-
-    public string GetEmail()
-    {
-        return Email;
-    }
-
-
-    private void SetSenha(String s)
-    {
-        Senha = s;
-    }
-
-    public string GetSenha()
-    {
-        return Senha;
-    }
+public class Cliente : Registro
+{
+  [BsonId]
+  public string Senha { get; set; }
+  public string Nome {get; set ;}
+  public string Email { get; set; }
+  public string Endereco { get; set; }
+  public string ConfirmarSenha { get; set;}
+  public int Id { get; set; }
 }

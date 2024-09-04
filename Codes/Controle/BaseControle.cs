@@ -1,26 +1,50 @@
-using System.Diagnostics.CodeAnalysis;
+using LiteDB;
+using Codes.Modelos;
 
 namespace Codes;
 
-public class BaseControle{
+public class BaseControle
+{
+  //----------------------------------------------------------------------------
 
-    public virtual void Criar(Objeto o)
-    {
+  protected string NomeDaTabela;
+  protected static LiteDatabase liteDB = null;
 
-    }
+  //----------------------------------------------------------------------------
 
-    public virtual void Analizar(Objeto o)
-    {
+  public BaseControle()
+  {
+    var pathToPersonalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "SESI.db");
 
-    }
+    if (liteDB == null)
+      liteDB = new LiteDatabase(@"filename=" + pathToPersonalFolder + "; upgrade=true; Mode=Exclusive");
+  }
 
-    public virtual Objeto Ler(Int64 Id)
-    {
-        return null;
-    }
+  //----------------------------------------------------------------------------
 
-    public virtual void Apagar(Int64 Id)
-    {
-        
-    }
+  public virtual void CriarOuAtualizar(Registro r)
+  {
+  }
+  
+  //----------------------------------------------------------------------------
+
+  public virtual void Apagar(int Senha)
+  {
+  }
+  
+  //----------------------------------------------------------------------------
+
+  public virtual Registro? Ler(int Senha)
+  {
+    return null;
+  }
+
+  //----------------------------------------------------------------------------
+
+  public virtual List<Registro>? LerTodos()
+  {
+    return null;
+  }
+
+  //----------------------------------------------------------------------------
 }
